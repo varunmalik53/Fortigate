@@ -448,3 +448,22 @@ variable "community-map" {
   }
 }
 
+variable "libre" {
+  default = "172.25.16.244"
+}
+
+variable "device42" {
+  default = "172.19.4.47 "
+}
+
+variable "auth_pwd" {
+  description = "Authentication password for snmpv3"
+  type        = string
+  default = "test"
+}
+
+variable "priv_pwd" {
+  description = "Encryption password for snmpv3"
+  type        = string
+  default = "test"
+}

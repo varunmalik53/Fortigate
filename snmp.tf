@@ -9,13 +9,13 @@ resource "fortios_systemsnmp_user" "net-mon" {
   security_level = "auth-priv"
   source_ip      = "0.0.0.0"
   source_ipv6    = "::"
-  notify_hosts = "172.19.4.47, 172.25.16.244"
+  notify_hosts = "${var.libre} ${var.device42}"
   status         = "enable"
   trap_lport     = 162
   trap_rport     = 162
   trap_status    = "enable"
-  auth_pwd       = "B0B;11BC%hjY"
-  priv_pwd = "+:f05T0k63ie"
+  auth_pwd       = var.auth_pwd
+  priv_pwd = var.priv_pwd
 }
 
 resource "fortios_systemsnmp_user" "infosec-mon" {
@@ -29,16 +29,13 @@ resource "fortios_systemsnmp_user" "infosec-mon" {
   security_level = "auth-priv"
   source_ip      = "0.0.0.0"
   source_ipv6    = "::"
+  notify_hosts = "${var.libre} ${var.device42}"
   status         = "enable"
   trap_lport     = 162
   trap_rport     = 162
   trap_status    = "enable"
-  auth_pwd       = "B0B;11BC%hjY"
-  priv_pwd = "+:f05T0k63ie"
-}
-
-resource "fortios_systemsnmp_user" "libre" {
-  name = "libre"
+  auth_pwd       = var.auth_pwd
+  priv_pwd = var.priv_pwd
 }
 
 resource "fortios_systemsnmp_sysinfo" "sysinfo" {
@@ -47,3 +44,4 @@ resource "fortios_systemsnmp_sysinfo" "sysinfo" {
   location = "HYD"
   contact_info = "it@schrodinger.com"
 }
+
