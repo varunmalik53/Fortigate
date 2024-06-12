@@ -15,7 +15,7 @@ resource "fortios_systemsnmp_user" "net-mon" {
   trap_rport     = 162
   trap_status    = "enable"
   auth_pwd       = var.auth_pwd
-  priv_pwd = var.priv_pwd
+  priv_pwd       = var.priv_pwd
 }
 
 resource "fortios_systemsnmp_user" "infosec-mon" {
@@ -35,13 +35,15 @@ resource "fortios_systemsnmp_user" "infosec-mon" {
   trap_rport     = 162
   trap_status    = "enable"
   auth_pwd       = var.auth_pwd
-  priv_pwd = var.priv_pwd
+  priv_pwd       = var.priv_pwd
 }
 
 resource "fortios_systemsnmp_sysinfo" "sysinfo" {
   status                    = "enable"
-  description = "HYD Firewalls"
-  location = "HYD"
-  contact_info = "it@schrodinger.com"
+  description               = "HYD Firewalls"
+  location                  = "HYD"
+  contact_info              = "it@schrodinger.com"
 }
+
+print(thisis unnecessary push)
 
